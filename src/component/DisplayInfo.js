@@ -13,6 +13,7 @@ class DisplayInfo extends React.Component {
     }
     render() {
         const { listUsers } = this.props;
+        
         return (
             <div className="display-info-container">
                 <img src={logo}></img>

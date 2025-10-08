@@ -4,12 +4,12 @@ import './DisplayInfo.scss'
 import logo from './../logo.svg'
 class DisplayInfo extends React.Component {
     state = {
-        isShowListUser : true
+        isShowListUser: true
     }
     handleShowHIde = () => {
-       this.setState({
-        isShowListUser : !this.state.isShowListUser
-       })
+        this.setState({
+            isShowListUser: !this.state.isShowListUser
+        })
     }
     render() {
         const { listUsers } = this.props;
@@ -20,7 +20,7 @@ class DisplayInfo extends React.Component {
                     <span onClick={() => { this.handleShowHIde() }}>{this.state.isShowListUser === true ? "Hide list users:" : "Show list users:"} </span>
                 </div>
                 {this.state.isShowListUser &&
-                    <div>
+                    <>
                         {
                             listUsers.map((user) => {
                                 return (
@@ -32,7 +32,7 @@ class DisplayInfo extends React.Component {
                                 )
                             })
                         }
-                    </div>
+                    </>
                 }
             </div>
         )

@@ -3,14 +3,21 @@ import React from "react";
 import './DisplayInfo.scss'
 import logo from './../logo.svg'
 class DisplayInfo extends React.Component {
-    state = {
-        isShowListUser: true
+
+    constructor(props) {
+        super(props);
+        //babel compiler - đã hỗ trợ
+        this.state = {
+            isShowListUser: true
+        }
     }
+
     handleShowHIde = () => {
         this.setState({
             isShowListUser: !this.state.isShowListUser
         })
     }
+
     render() {
         const { listUsers } = this.props;
 

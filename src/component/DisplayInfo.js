@@ -5,11 +5,24 @@ import logo from './../logo.svg'
 class DisplayInfo extends React.Component {
 
     constructor(props) {
+        console.log("call me constructor: 1");
         super(props);
         //babel compiler - đã hỗ trợ
         this.state = {
             isShowListUser: true
         }
+    }
+
+    //Sử dụng để gọi api xử lý giá trị state
+    componentDidMount() {
+        console.log("call me componentDidMount");
+        setTimeout(()=>{
+            document.title = "Sky";
+        },3000)
+    }
+
+    componentDidUpdate(prevProp, prevState, scapshot){
+          console.log("call me componentDidUpdate", this.props, prevProp);
     }
 
     handleShowHIde = () => {
@@ -19,6 +32,7 @@ class DisplayInfo extends React.Component {
     }
 
     render() {
+        console.log("call me render");
         const { listUsers } = this.props;
 
         return (
